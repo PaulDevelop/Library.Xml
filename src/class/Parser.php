@@ -154,10 +154,10 @@ class Parser
             $result = new CData($node->nodeValue);
             //this.throwCDataParsedEvent(new CDataParsedEventArgs(new CData(_content)));
         } else {
-            $result = new Tag($_namespace, $_name, $_attributes, $_content);
+            $result = new Tag($_namespace, $_name, $_attributes); //, $_content);
             $this->throwTagParsedEvent(
                 new TagParsedEventArgs(
-                    new Tag($_namespace, $_name, $_attributes, $_content)
+                    $result //new Tag($_namespace, $_name, $_attributes, $_content)
                 )
             );
         }
